@@ -26,7 +26,7 @@ void setup ()
     
     //code to intialize mines
     mines = new ArrayList <MSButton> ();
-    for(int i = 0; i < 35; i++){
+    for(int i = 0; i < 50; i++){
       setMines();
     }
 }
