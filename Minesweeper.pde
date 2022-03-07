@@ -26,7 +26,7 @@ void setup ()
     
     //code to intialize mines
     mines = new ArrayList <MSButton> ();
-    for(int i = 0; i < 50; i++){
+    for(int i = 0; i < 35; i++){
       setMines();
     }
 }
@@ -215,15 +215,10 @@ public class MSButton
         clicked = true;
         //your code here
         if(mouseButton == RIGHT){
-          
-          if(flagged == true){
-            flagged = false;
-            clicked = false;
-          }
+          flagged = !flagged;
             
-          if(flagged == false){
-            flagged = true; 
-          }
+          if(flagged == false)
+            clicked = false;
         }
         
         else if(mines.contains(this))
@@ -255,7 +250,7 @@ public class MSButton
     public void draw () 
     {    
         if (flagged)
-            fill(0);
+            fill(255, 204, 255);
           
         else if(clicked && mines.contains(this)){
             fill(255, 153, 204);
